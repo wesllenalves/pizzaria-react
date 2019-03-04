@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { MainPage } from './pages/main'
-import { Login } from './pages/login'
+import { CssBaseline } from '@material-ui/core'
+import { MainPage } from 'pages/main'
+import { Login } from 'pages/login'
 
 const App = ()=> (
-  <BrowserRouter>
-    <Switch>
-      <Route path='/login' component={Login} />
-      <Route path='/' component={MainPage}  />      
-    </Switch>
-  </BrowserRouter>
+  <Fragment>
+    <CssBaseline>
+      <BrowserRouter>
+        <Switch>
+          <Route path='/login' component={Login} />
+          <Route path='/' component={MainPage}  />      
+        </Switch>
+      </BrowserRouter>    
+    </CssBaseline>  
+  </Fragment>
 )
 
 export default App
